@@ -25,9 +25,6 @@ public class Book {
     private double price;
     private int quantity;
 
-//    @ManyToOne(fetch = FetchType.LAZY)
-//    @JoinColumn(name = "book_store_id")
-//    @JsonIgnoreProperties("books")
     @ManyToOne
     @JsonIgnore
     private BookStore bookStore;

@@ -20,7 +20,6 @@ public class BookStore {
     private String address;
     private String contact;
 
-//    @JsonIgnore
     @OneToMany(mappedBy = "bookStore", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<Book> books = new ArrayList<>();
 
