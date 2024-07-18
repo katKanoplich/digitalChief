@@ -1,4 +1,5 @@
 package com.testProject.digitalChief.model;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.*;
 import java.util.ArrayList;
@@ -19,6 +20,7 @@ public class BookStore {
     private String address;
     private String contact;
 
+//    @JsonIgnore
     @OneToMany(mappedBy = "bookStore", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<Book> books = new ArrayList<>();
 

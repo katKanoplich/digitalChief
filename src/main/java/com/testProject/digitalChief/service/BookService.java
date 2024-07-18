@@ -1,13 +1,15 @@
 package com.testProject.digitalChief.service;
 
+import com.testProject.digitalChief.dto.BookRequest;
+import com.testProject.digitalChief.dto.BookResponse;
 import com.testProject.digitalChief.model.Book;
 
 import java.util.List;
 
 public interface BookService {
-    List<Book> getAllBook();
-    Book addBook(Book book);
+    List<BookResponse> getAllBooks();
+    void createBook(BookRequest bookRequest);
     void deleteBook(long id);
-    Book updateBook(long id, Book updateBook);
-    Book getBookById(long id);
+    BookResponse updateBook(Long id, BookRequest updateBookRequest);
+    BookResponse getBookById(long id);
 }

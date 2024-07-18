@@ -1,5 +1,7 @@
 package com.testProject.digitalChief.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import jakarta.persistence.*;
 import lombok.*;
 
@@ -23,7 +25,10 @@ public class Book {
     private double price;
     private int quantity;
 
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "book_store_id")
+//    @ManyToOne(fetch = FetchType.LAZY)
+//    @JoinColumn(name = "book_store_id")
+//    @JsonIgnoreProperties("books")
+    @ManyToOne
+    @JsonIgnore
     private BookStore bookStore;
 }
